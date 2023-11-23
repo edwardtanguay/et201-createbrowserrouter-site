@@ -3,12 +3,14 @@ import App from "./App.tsx";
 import "./index.css";
 import { PageWelcome } from "./pages/PageWelcome.tsx";
 import { PageAbout } from "./pages/PageAbout.tsx";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Page404 } from "./pages/Page404.tsx";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App />,
+		errorElement: <Page404 />,
 		children: [
 			{
 				path: "/welcome",
@@ -17,6 +19,10 @@ const router = createBrowserRouter([
 			{
 				path: "/about",
 				element: <PageAbout />,
+			},
+			{
+				path: "/",
+				element: <Navigate to="/welcome" />,
 			},
 		],
 	},

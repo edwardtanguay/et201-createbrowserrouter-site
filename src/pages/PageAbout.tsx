@@ -1,5 +1,5 @@
 export const PageAbout = () => {
 	return (
-		<p>this is the about page</p>
+		<p>This is the about page.</p>
 	)
 }
